@@ -1,0 +1,21 @@
+#ifndef SOUND_H
+#define SOUND_H
+
+#include "bh.h"
+
+#define SND_SAMPLE_SONG_1 64
+#define SND_SAMPLE_ALIEN_FALL 65
+#define SND_SAMPLE_ALIEN_POP 66
+#define SND_SAMPLE_CANNON_FALL 67
+#define SND_SAMPLE_CANNON_SHOT 68
+#define SND_SAMPLE_GUY_THUNK 69
+#define SND_SAMPLE_HORSE 70
+#define SND_SAMPLE_JUMP 71
+#define SND_SAMPLE_PAUSE 72
+#define SND_SAMPLE_CREAK_1 73
+#define SND_SAMPLE_CREAK_2 74
+#define SND_SAMPLE_GAME_OVER 75
+
+void snd_init(void);
+
+#endif
