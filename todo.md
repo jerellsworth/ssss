@@ -1,4 +1,3 @@
-alien force increases by round
 maybe port song to vgm format
 
 # bugs

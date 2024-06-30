@@ -77,7 +77,7 @@ Enc *Enc_new(u8 n_players) {
         e->players[player_no]->player_no = player_no;
         ++joy;
     }
-    e->alien_force = FIX16(1.5) * n_players;
+    e->alien_force = FIX16(1.25) * n_players;
     e->horse_frames = random_with_max(900);
     e->lives = 4;
     Enc_update_score(e, 0);
@@ -139,6 +139,7 @@ void Enc_update(Enc *e) {
     if (e->aliens == 0) {
         ++e->level;
         if (!(e->level & 3)) e->bg->invader_speed *= 2;
+        e->alien_force *= 1.2;
         Enc_alien_line(e);
     }
     if (e->horse_frames > 0) {
