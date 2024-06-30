@@ -79,7 +79,7 @@ void Physics_del(Physics *p, Enc *e) {
     if (p->partner) p->partner->partner = NULL;
     if (p->sp) SPR_releaseSprite(p->sp);
     if (p->pl) p->pl->p = NULL;
-    if (p->instance_counter) --(*p->instance_counter);
+    if (p->instance_counter && (*p->instance_counter > 0)) --(*p->instance_counter);
     if (e->cannon == p) e->cannon = NULL;
     if (p->bg_element) {
         VDP_clearTileMapRect(

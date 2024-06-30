@@ -16,7 +16,7 @@ void results(Enc *enc) {
     char buf[32];
     sprintf(buf, "score: %d00", enc->score);
     VDP_drawTextBG(BG_B, buf, 15, 2);
-    sprintf(buf, "frames: %d", enc->frames);
+    sprintf(buf, " waves: %d", enc->level);
     VDP_drawTextBG(BG_B, buf, 14, 3);
 
     VDP_drawTextBG(BG_B, "You must submit to supreme suffering", 2, 18);
