@@ -114,10 +114,10 @@ void behave(Encounter *e, Physics *p) {
                         SPR_ensureAnim(p->sp, 2);
                         if (p->dx > 0 && p->col_x < p->partner->col_x) {
                             SPR_ensureAnim(p->sp, 2);
-                            p->partner->force_x += FIX16(1.25);
+                            p->partner->force_x += e->alien_force;
                         } else if (p->dx < 0 && p->col_x > p->partner->col_x) {
                             SPR_ensureAnim(p->sp, 2);
-                            p->partner->force_x -= FIX16(1.25);
+                            p->partner->force_x -= e->alien_force;
                         }
                     }
                     return;

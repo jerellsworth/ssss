@@ -37,6 +37,8 @@ struct Encounter_s{
     u16 horse_frames;
 
     Phy *cannon;
+
+    fix16 alien_force;
 };
 
 Enc *Enc_new(u8 n_players);

@@ -77,7 +77,7 @@ Enc *Enc_new(u8 n_players) {
         e->players[player_no]->player_no = player_no;
         ++joy;
     }
-
+    e->alien_force = FIX16(1.25) * n_players;
     e->horse_frames = random_with_max(900);
     e->lives = 4;
     Enc_update_score(e, 0);
