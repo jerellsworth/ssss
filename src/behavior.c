@@ -182,7 +182,9 @@ void behave(Encounter *e, Physics *p) {
                             p->grav_model = TRUE;
                             p->state = 1;
                             p->state_frames = 0;
-                            --(*p->instance_counter);
+                            if (*(p->instance_counter) > 0) {
+                                --(*p->instance_counter);
+                            }
                             p->instance_counter = NULL;
                         }
                     return;
