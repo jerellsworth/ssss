@@ -6,7 +6,6 @@ void behave(Encounter *e, Physics *p) {
             if (p->blocked && p->state == 0) {
                 p->state = 1;
                 p->state_frames = 0;
-                XGM_startPlayPCMNextCh(SND_SAMPLE_CANNON_FALL, 9);
                 for (int i = 0; i < MAX_PHYSICS_OBJS; ++i) {
                     Phy *p2 = ALL_PHYSICS_OBJS[i];
                     if (
@@ -34,7 +33,6 @@ void behave(Encounter *e, Physics *p) {
 
             if (!(p->frames_alive & 15)) {
                 Physics_new_bullet(e, p->x + FIX16(6), p->y - FIX16(2), 0, FIX16(-3));
-                //XGM_startPlayPCMNextCh(SND_SAMPLE_CANNON_SHOT, 7);
             }
             return;
         case WHAT_GUY:
@@ -72,7 +70,7 @@ void behave(Encounter *e, Physics *p) {
                         p->state = 0;
                         p->state_frames = 0;
                         if (p->pl) p->pl->cooldown = 10;
-                        XGM_startPlayPCMNextCh(SND_SAMPLE_GUY_THUNK, 10);
+                        //XGM_startPlayPCMNextCh(SND_SAMPLE_GUY_THUNK, 10);
                     }
                     break;
                 default:
