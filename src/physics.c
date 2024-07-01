@@ -214,10 +214,10 @@ void Physics_update_all(Encounter *enc) {
 
     if (enc->state != ENC_RUNNING) return;
 
-    fixx interval = FIX16(336);
-    fixx xmin = FIXX(0);
-    fixx xmax = interval;
-    while (xmin < FIXX(320)) {
+    fixy interval = FIXY(70);
+    fixy ymin = FIXY(0);
+    fixy ymax = interval;
+    while (ymin < FIXY(224)) {
         Phy *phys_in_range[MAX_PHYSICS_OBJS];
         u8 n_phys_in_range = 0;
 
@@ -226,7 +226,7 @@ void Physics_update_all(Encounter *enc) {
             if (!p) continue;
             if (!p->collision) continue;
             if (p->iframes > 0) continue;
-            if (p->x < xmin || p->x >= xmax) continue;
+            if (p->y < ymin || p->y >= ymax) continue;
             phys_in_range[n_phys_in_range] = p;
             ++n_phys_in_range;
         }
@@ -283,8 +283,8 @@ void Physics_update_all(Encounter *enc) {
                 }
             }
         }
-        xmin = xmax - FIXX(16);
-        xmax = xmin + interval;
+        ymin = ymax - FIXY(16);
+        ymax = ymin + interval;
     }
 }
 
