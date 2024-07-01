@@ -26,7 +26,8 @@ void behave(Encounter *e, Physics *p) {
             if (p->blocked) {
                 p->force_x += FIX16(e->bg->theta - 512) >> 5;
             }
-            p->dx = p->force_x >> 2;
+            p->dx = clamp(p->force_x >> 2, FIX16(-1.5), FIX16(1.5));
+            
 
             p->force_x = 0;
             if (p->dx != 0) SPR_nextFrame(p->sp);
