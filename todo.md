@@ -5,3 +5,5 @@ maybe port song to vgm format
 - 14, 18 percussion
 
 # bugs
+
+I missed a section somewhere
