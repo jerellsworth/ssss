@@ -116,10 +116,6 @@ void Physics_update(Encounter *e, Physics *p) {
         --p->ttl;
     }
 
-    if (p->iframes > 0) {
-        --p->iframes;
-    }
-
     ++p->state_frames;
     ++p->frames_alive;
 
@@ -152,7 +148,7 @@ void Physics_update(Encounter *e, Physics *p) {
         if (p->dx >= p->terminal_velocity_down) p->dx = p->terminal_velocity_down;
     }
 
-    if (p->collision && (!p->ignore_walls)) {
+    if (p->collision) {
         fixy h = FIXY(p->h);
         p->blocked = FALSE;
         fixy ytop = BG_collide(e->bg, p->col_x, p->y + h + p->dy);
