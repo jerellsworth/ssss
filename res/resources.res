@@ -21,7 +21,6 @@ SPRITE SPR_ALIEN "sprites/alien.png" 1 1 0 13
 SPRITE SPR_HORSE "sprites/horse.png" 4 2 0 11
 SPRITE SPR_PARTICLE "sprites/particles.png" 1 1
 SPRITE SPR_STAR "sprites/stars.png" 1 1 0 20
-WAV WAV_SONG_1 "songs/mad_bossa.wav" 4
 WAV WAV_ALIEN_FALL "sfx/alien_fall.wav" 4
 WAV WAV_ALIEN_POP "sfx/alien_pop.wav" 4
 WAV WAV_CANNON_FALL "sfx/cannon_fall.wav" 4
@@ -33,3 +32,4 @@ WAV WAV_PAUSE "sfx/pause.wav" 4
 WAV WAV_CREAK_1 "sfx/creak1.wav" 4
 WAV WAV_CREAK_2 "sfx/creak2.wav" 4
 WAV WAV_GAME_OVER "sfx/gameover.wav" 4
+XGM XGM_SONG_1 "songs/mad_bossa.vgm" 0 -di -dr -dd

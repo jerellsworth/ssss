@@ -10,7 +10,7 @@ Thanks to Other M. for the "contribution"
 # Music
 
 Old Music used on Youtube is "Latin Summer" by William King https://pixabay.com/music/solo-guitar-latin-summer-157685/
-Current Music is the brilliant "Mad Bossa" by Spring Spring https://opengameart.org/content/mad-bossa (CC0)
+Current Music is the brilliant "Mad Bossa" by Spring Spring https://opengameart.org/content/mad-bossa (CC0). Translated to vgm format by me.
 
 # SFX
 

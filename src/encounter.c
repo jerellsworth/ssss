@@ -102,14 +102,14 @@ void Enc_cleanup(Enc *e) {
     SPR_reset();
     SPR_update();
     SYS_doVBlankProcess();
-    XGM_stopPlayPCM(SOUND_PCM_CH1);
+    XGM_stopPlay();
 }
 
 void Enc_update(Enc *e) {
-    if (e->music_on && !(e->frames & 3) && !XGM_isPlayingPCM(SOUND_PCM_CH1_MSK)) {
+    if (e->music_on && !(e->frames & 3) && !XGM_isPlaying()) {
         switch (e->song) {
             case 0:
-                XGM_startPlayPCM(SND_SAMPLE_SONG_1, 15, SOUND_PCM_CH1);
+                XGM_startPlay(XGM_SONG_1);
                 break;
             default:
                 break;
