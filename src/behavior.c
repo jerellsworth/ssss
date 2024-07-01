@@ -70,7 +70,7 @@ void behave(Encounter *e, Physics *p) {
                         }
                         p->state = 0;
                         p->state_frames = 0;
-                        if (p->pl) p->pl->cooldown = 10;
+                        if (p->pl) p->pl->cooldown = 5;
                         //XGM_startPlayPCMNextCh(SND_SAMPLE_GUY_THUNK, 10);
                     }
                     break;

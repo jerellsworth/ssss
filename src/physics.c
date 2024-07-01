@@ -151,11 +151,11 @@ void Physics_update(Encounter *e, Physics *p) {
     if (p->collision) {
         fixy h = FIXY(p->h);
         p->blocked = FALSE;
-        fixy ytop = BG_collide(e->bg, p->col_x, p->y + h + p->dy);
+        fixy ytop = BG_collide(e->bg, p->col_x, p->y + h + p->dy + p->y_offset);
         if (ytop) {
             p->blocked = TRUE;
             p->dy = 0;
-            p->y = ytop - h - FIX16(1);
+            p->y = ytop - h - p->y_offset;
         }
     }
 
@@ -197,8 +197,8 @@ u32 Physics_dist(Physics *p1, Physics *p2) {
 bool collision_box(Phy *p1, Phy *p2) {
     fixx p1x = p1->x + fix16ToFixx(p1->dx);
     fixx p2x = p2->x + fix16ToFixx(p2->dx);
-    fixy p1y = p1->y + fix16ToFixy(p1->dy);
-    fixy p2y = p2->y + fix16ToFixy(p2->dy);
+    fixy p1y = p1->y + p1->y_offset + fix16ToFixy(p1->dy);
+    fixy p2y = p2->y + p2->y_offset + fix16ToFixy(p2->dy);
     return (
         p1x < p2x + FIXX(p2->w) &&
         p1x + FIXX(p1->w) > p2->x &&

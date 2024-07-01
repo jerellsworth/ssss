@@ -22,6 +22,7 @@ struct Physics_s {
     fixx x, col_x;
     fixx start_x;
     fixy start_y;
+    fixy y_offset;
 
     fix16 dx, dy, ddx, ddy; 
     Facing f;
