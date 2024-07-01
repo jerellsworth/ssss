@@ -139,7 +139,7 @@ void Enc_update(Enc *e) {
     if (e->aliens == 0) {
         ++e->level;
         if ((!(e->level & 3)) && e->level < 13) e->bg->invader_speed *= 2;
-        e->alien_force *= 1.2;
+        e->alien_force *= 1.1;
         Enc_alien_line(e);
     }
     if (e->horse_frames > 0) {

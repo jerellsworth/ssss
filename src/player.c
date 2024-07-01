@@ -31,7 +31,7 @@ void Player_input(Player *pl, Enc *e) {
         }
         switch (p->what) {
             case WHAT_GUY:
-                fix16 force = FIX16(5); 
+                fix16 force = FIX16(7); 
                 p->dx = 0;
                 if (joy & BUTTON_RIGHT) {
                     SPR_setHFlip(p->sp, FALSE);
@@ -69,7 +69,7 @@ void Player_input(Player *pl, Enc *e) {
                         p->push_frames = 6;
                     }
                     if (p->push_frames > 0) {
-                        force = FIX16(10);
+                        force = FIX16(12);
                     }
                     if (p->dx > 0 && p->col_x < p->partner->col_x) {
                         SPR_ensureAnim(p->sp, 2);
