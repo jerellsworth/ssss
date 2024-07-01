@@ -26,7 +26,7 @@ void behave(Encounter *e, Physics *p) {
             if (p->blocked) {
                 p->force_x += FIX16(e->bg->theta - 512) >> 5;
             }
-            p->dx = clamp(p->force_x >> 2, FIX16(-1.5), FIX16(1.5));
+            p->dx = clamp(p->force_x >> 2, FIX16(-1.2), FIX16(1.2));
             
 
             p->force_x = 0;
@@ -221,7 +221,7 @@ bool interact(Enc *e, Physics *pi, Physics *pj) {
     } else if (p1->what == WHAT_CANNON && p2->what == WHAT_BULLET) {
         return TRUE;
     } else if (p1->what == WHAT_ALIEN && (p2->what == WHAT_BULLET || p2->what == WHAT_PARTICLE)) {
-        XGM_startPlayPCMNextCh(SND_SAMPLE_ALIEN_POP, 7);
+        XGM_startPlayPCMNextCh(SND_SAMPLE_ALIEN_POP, 0);
         Physics_del(p1, e);
         Physics_del(p2, e);
         for (u8 i = 0; i < 4; ++i) {
@@ -237,7 +237,7 @@ bool interact(Enc *e, Physics *pi, Physics *pj) {
             Physics_new_bullet_particle(e, p2->x + FIXX(4), p2->y + FIXY(4));
         }
         Enc_update_score(e, 100);
-        XGM_startPlayPCMNextCh(SND_SAMPLE_HORSE, 13);
+        XGM_startPlayPCMNextCh(SND_SAMPLE_HORSE, 1);
         return TRUE;
     } else if (p2->what == WHAT_PARTICLE) {
         return TRUE;

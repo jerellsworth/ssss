@@ -171,7 +171,7 @@ void Physics_update(Encounter *e, Physics *p) {
     if (p->y >= FIXY(224)) {
         Physics_del(p, e);
         if (p->what == WHAT_ALIEN) {
-            XGM_startPlayPCMNextCh(SND_SAMPLE_ALIEN_FALL, 7);
+            XGM_startPlayPCMNextCh(SND_SAMPLE_ALIEN_FALL, 0);
         }
         return;
     }
