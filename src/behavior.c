@@ -221,12 +221,12 @@ bool interact(Enc *e, Physics *pi, Physics *pj) {
     } else if (p1->what == WHAT_CANNON && p2->what == WHAT_BULLET) {
         return TRUE;
     } else if (p1->what == WHAT_ALIEN && (p2->what == WHAT_BULLET || p2->what == WHAT_PARTICLE)) {
+        XGM_startPlayPCMNextCh(SND_SAMPLE_ALIEN_POP, 7);
         Physics_del(p1, e);
         Physics_del(p2, e);
         for (u8 i = 0; i < 4; ++i) {
             Physics_new_particle(e, p1->x + FIXX(4), p1->y + FIXY(4));
         }
-        XGM_startPlayPCMNextCh(SND_SAMPLE_ALIEN_POP, 7);
         Enc_update_score(e, 1);
         return TRUE;
     } else if (p1->what == WHAT_GUY && p2->what == WHAT_BULLET) {
