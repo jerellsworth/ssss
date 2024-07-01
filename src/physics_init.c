@@ -70,7 +70,7 @@ Phy *Physics_new_horse(Enc *e, fixx x, fixy y, u8 *counter) {
     p->instance_counter = counter;
     p->ttl = 200;
     p->w = 28;
-    XGM_startPlayPCMNextCh(SND_SAMPLE_HORSE, 13);
+    //XGM_startPlayPCMNextCh(SND_SAMPLE_HORSE, 13);
     return p;
 }
 

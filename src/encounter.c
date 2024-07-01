@@ -106,7 +106,7 @@ void Enc_cleanup(Enc *e) {
 }
 
 void Enc_update(Enc *e) {
-    if (e->music_on && !(e->frames & 3) && !XGM_isPlaying()) {
+    if (e->music_on && !(e->frames & 15) && !XGM_isPlaying()) {
         switch (e->song) {
             case 0:
                 XGM_startPlay(XGM_SONG_1);
