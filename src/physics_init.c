@@ -11,8 +11,11 @@ Phy *Physics_new_guy(Enc *e, const SpriteDefinition *spriteDef, fixx x, fixy y) 
     SPR_setAlwaysOnTop(p->sp);
     p->calc_collisions = FALSE;
     p->push_ready = TRUE;
+    /*
+    // possible hack so we don't accidentally go under the cannon
     p->y_offset = FIXY(-8);
     p->h = 16;
+    */
     return p;
 }
 

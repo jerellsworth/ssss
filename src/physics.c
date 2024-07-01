@@ -214,7 +214,7 @@ void Physics_update_all(Encounter *enc) {
 
     if (enc->state != ENC_RUNNING) return;
 
-    fixy interval = FIXY(70);
+    fixy interval = FIXY(80);
     fixy ymin = FIXY(0);
     fixy ymax = interval;
     while (ymin < FIXY(224)) {
@@ -283,7 +283,7 @@ void Physics_update_all(Encounter *enc) {
                 }
             }
         }
-        ymin = ymax - FIXY(16);
+        ymin = ymax - FIXY(32);
         ymax = ymin + interval;
     }
 }
