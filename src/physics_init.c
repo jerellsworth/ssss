@@ -109,6 +109,7 @@ Phy *Physics_new_star(Enc *e, fixx x, fixx y) {
     p->what = WHAT_PROP;
     SPR_setAnim(p->sp, random_with_max(2));
     SPR_setPriority(p->sp, FALSE);
+    SPR_setDepth(p->sp, 0x7FFF); // send to bottom
     for (u16 i = 0; i < random_with_max(20 * 4 - 1); ++i) SPR_nextFrame(p->sp);
     return p;
 }

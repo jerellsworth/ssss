@@ -46,17 +46,14 @@ void Player_input(Player *pl, Enc *e) {
                 } else {
                     SPR_ensureAnim(p->sp, 0);
                 }
-                if ((joy & BUTTON_DOWN) && (p->state == 1)) {
-                    p->dy = FIXY(8);
-                }
                 if (
                     (joy & BUTTON_ACTION) &&
                     (pl->cooldown == 0) &&
                     BG_collide(e->bg, p->x, p->y + FIXY(p->h) + FIX16(3)) &&
                     p->state == 0
                     ) {
-                    p->dy = FIXY(-8);
-                    pl->cooldown = 10;
+                    p->dy = FIX16(-8);
+                    pl->cooldown = 3;
                     p->state = 1;
                     p->state_frames = 0;
                     XGM_startPlayPCMNextCh(SND_SAMPLE_JUMP, 11);
